@@ -1,0 +1,76 @@
+---
+import PixelSnow from './react/PixelSnow';
+
+interface Props {
+  color?: string;
+  flakeSize?: number;
+  minFlakeSize?: number;
+  pixelResolution?: number;
+  speed?: number;
+  depthFade?: number;
+  farPlane?: number;
+  brightness?: number;
+  gamma?: number;
+  density?: number;
+  variant?: 'square' | 'round' | 'snowflake';
+  direction?: number;
+  clientLoad?: boolean;
+}
+
+const {
+  color = '#ffffff',
+  flakeSize = 0.012,
+  minFlakeSize = 1.25,
+  pixelResolution = 180,
+  speed = 1.1,
+  depthFade = 8,
+  farPlane = 20,
+  brightness = 1.1,
+  gamma = 0.4545,
+  density = 0.28,
+  variant = 'round',
+  direction = 125,
+  clientLoad = true,
+} = Astro.props;
+---
+
+<div class="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+  <div class="w-full h-full relative">
+    {clientLoad ? (
+      <PixelSnow
+        client:only="react"
+        color={color}
+        flakeSize={flakeSize}
+        minFlakeSize={minFlakeSize}
+        pixelResolution={pixelResolution}
+        speed={speed}
+        depthFade={depthFade}
+        farPlane={farPlane}
+        brightness={brightness}
+        gamma={gamma}
+        density={density}
+        variant={variant}
+        direction={direction}
+      />
+    ) : (
+      <PixelSnow
+        client:visible
+        color={color}
+        flakeSize={flakeSize}
+        minFlakeSize={minFlakeSize}
+        pixelResolution={pixelResolution}
+        speed={speed}
+        depthFade={depthFade}
+        farPlane={farPlane}
+        brightness={brightness}
+        gamma={gamma}
+        density={density}
+        variant={variant}
+        direction={direction}
+      />
+    )}
+  </div>
+  <!-- Vignette and subtle gradient overlays for contrast and readability -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/80 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(0,0,0,0.7)_100%)] pointer-events-none"></div>
+</div>

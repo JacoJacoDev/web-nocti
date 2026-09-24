@@ -1,0 +1,126 @@
+---
+import SFSymbol from "./SFSymbol.astro";
+
+const services = [
+  {
+    num: "01",
+    symbol: "terminal",
+    title: "Web Development",
+    description: "High-performance websites engineered for modern businesses.",
+    details:
+      "Built with clean semantic code, optimized bundle sizes, and resilient modern web standards.",
+  },
+  {
+    num: "02",
+    symbol: "paintpalette",
+    title: "UX/UI Design",
+    description:
+      "Interfaces designed around clarity, usability and intentional interaction.",
+    details:
+      "Ergonomic hierarchies, fluid motion systems, and direct manipulation paradigms.",
+  },
+  {
+    num: "03",
+    symbol: "globe",
+    title: "Landing Pages",
+    description:
+      "Focused digital experiences designed to communicate value and drive action.",
+    details:
+      "Frictionless messaging, high-converting architecture, and immediate responsiveness.",
+  },
+  {
+    num: "04",
+    symbol: "building",
+    title: "Corporate Websites",
+    description:
+      "Professional digital platforms designed to establish credibility and communicate clearly.",
+    details:
+      "Structured for long-term scalability, multi-device fidelity, and corporate distinction.",
+  },
+  {
+    num: "05",
+    symbol: "bag",
+    title: "E-commerce",
+    description:
+      "Scalable commerce experiences optimized for usability and performance.",
+    details:
+      "Frictionless checkout paths, performant product exploration, and resilient infrastructure.",
+  },
+  {
+    num: "06",
+    symbol: "bolt",
+    title: "Automation & Integrations",
+    description:
+      "Connect websites with the tools and systems businesses already use.",
+    details:
+      "Headless workflows, CRM sync, custom APIs, and automated operational pipelines.",
+  },
+];
+---
+
+<section
+  id="services"
+  class="relative px-4 sm:px-8 py-12 md:py-16 bg-[#000000] text-[#f5f5f7] overflow-hidden"
+>
+  <div class="relative z-10 max-w-[960px] mx-auto">
+    <!-- Apple Eyebrow -->
+    <div class="reveal-item flex items-center gap-2 mb-3">
+      <SFSymbol name="layers" class="w-3.5 h-3.5 text-[#2997ff]" />
+      <span class="apple-eyebrow text-[#2997ff]">03 — Capabilities</span>
+    </div>
+
+    <!-- Section Intro Headline -->
+    <div class="reveal-item max-w-3xl mb-6" style="transition-delay: 80ms;">
+      <h2 class="apple-headline-section text-[#f5f5f7] tracking-tight mb-2">
+        Engineered for precision and scale.
+      </h2>
+      <p class="apple-body-large text-[#86868b] font-normal">
+        We deliver digital solutions that eliminate complexity and prioritize
+        execution excellence.
+      </p>
+    </div>
+
+    <!-- Apple-style Capabilities Grid (2 Columns, Rounded Bento Cards) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+      {
+        services.map((service, index) => (
+          <div
+            class="reveal-item apple-card-dark p-4 sm:p-5 group hover:border-white/[0.2] transition-all duration-300"
+            style={`transition-delay: ${index * 50}ms;`}
+          >
+            <div class="flex items-center justify-between mb-2.5">
+              <div class="w-8 h-8 rounded-lg bg-[#1d1d1f] border border-white/[0.08] flex items-center justify-center text-[#2997ff] group-hover:scale-105 transition-transform duration-200">
+                <SFSymbol name={service.symbol as any} class="w-3.5 h-3.5" />
+              </div>
+              <span class="text-[11px] font-mono text-[#86868b] font-medium">
+                {service.num}
+              </span>
+            </div>
+
+            <h3 class="text-[16px] sm:text-[17px] font-semibold tracking-tight text-[#f5f5f7] mb-1 group-hover:text-white transition-colors">
+              {service.title}
+            </h3>
+
+            <p class="apple-body-small text-[#f5f5f7]/90 mb-1.5 font-normal text-[13px]">
+              {service.description}
+            </p>
+
+            <p class="text-[11.5px] text-[#86868b] mb-2.5 leading-relaxed">
+              {service.details}
+            </p>
+
+            <div class="pt-2.5 border-t border-white/[0.06] flex items-center justify-between">
+              <a href="#contact" class="apple-link text-[12.5px]">
+                <span>Explore capability</span>
+                <SFSymbol
+                  name="chevron.right"
+                  class="w-2.5 h-2.5 text-[#2997ff]"
+                />
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

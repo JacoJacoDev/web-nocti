@@ -1,0 +1,180 @@
+---
+interface Props {
+  name:
+    | "chevron.right"
+    | "arrow.up.right"
+    | "sparkles"
+    | "cpu"
+    | "gauge"
+    | "terminal"
+    | "layers"
+    | "globe"
+    | "building"
+    | "bag"
+    | "bolt"
+    | "magnifyingglass"
+    | "compass"
+    | "paintpalette"
+    | "hammer"
+    | "paperplane"
+    | "lock.shield"
+    | "checkmark"
+    | "devices"
+    | "chart.line"
+    | "slider";
+  class?: string;
+  size?: number;
+}
+
+const { name, class: className = "w-4 h-4", size = 16 } = Astro.props;
+---
+
+{name === "chevron.right" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M6 3.5l4.5 4.5-4.5 4.5" />
+  </svg>
+)}
+
+{name === "arrow.up.right" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4.5 11.5L11.5 4.5M11.5 4.5H6M11.5 4.5V10" />
+  </svg>
+)}
+
+{name === "sparkles" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 1.5v13M1.5 8h13M3.5 3.5l9 9M3.5 12.5l9-9" />
+  </svg>
+)}
+
+{name === "cpu" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3.5" y="3.5" width="9" height="9" rx="2" />
+    <path d="M6 6h4v4H6z" fill="currentColor" fill-opacity="0.15" />
+    <path d="M6 1.5v2M10 1.5v2M6 12.5v2M10 12.5v2M1.5 6h2M1.5 10h2M12.5 6h2M12.5 10h2" />
+  </svg>
+)}
+
+{name === "gauge" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2.5 12a6.5 6.5 0 1 1 11 0" />
+    <path d="M8 8.5l3-3" stroke-width="1.75" />
+    <circle cx="8" cy="8.5" r="1.25" fill="currentColor" />
+  </svg>
+)}
+
+{name === "terminal" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="2" y="3" width="12" height="10" rx="2" />
+    <path d="M5 6.5l2 1.5-2 1.5M9 9.5h2" />
+  </svg>
+)}
+
+{name === "layers" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2 5.5l6-3.5 6 3.5-6 3.5-6-3.5z" />
+    <path d="M2 8.5l6 3.5 6-3.5" />
+    <path d="M2 11.5l6 3.5 6-3.5" />
+  </svg>
+)}
+
+{name === "globe" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="8" cy="8" r="6" />
+    <path d="M2.2 8h11.6M8 2a9 9 0 0 1 0 12M8 2a9 9 0 0 0 0 12" />
+  </svg>
+)}
+
+{name === "building" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="3" y="3" width="10" height="11" rx="1" />
+    <path d="M6 6h1M9 6h1M6 9h1M9 9h1M7 14v-2h2v2" />
+  </svg>
+)}
+
+{name === "bag" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3.5 5h9l1 9.5H2.5L3.5 5z" />
+    <path d="M5.5 5V3.5a2.5 2.5 0 0 1 5 0V5" />
+  </svg>
+)}
+
+{name === "bolt" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8.5 1.5L3 9h5l-1 5.5 6-7.5H8l.5-5.5z" />
+  </svg>
+)}
+
+{name === "magnifyingglass" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="7" cy="7" r="4.5" />
+    <path d="M10.5 10.5L14 14" />
+  </svg>
+)}
+
+{name === "compass" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="8" cy="8" r="6" />
+    <polygon points="10,6 6.5,7.5 6,10 9.5,8.5" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="1.2" />
+  </svg>
+)}
+
+{name === "paintpalette" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 2a6 6 0 1 0 3 11.2c.4-.2.6-.7.6-1.2 0-.8.6-1.5 1.4-1.5H13a1 1 0 0 0 1-1 6 6 0 0 0-6-7.5z" />
+    <circle cx="5" cy="6" r=".75" fill="currentColor" />
+    <circle cx="8" cy="4.5" r=".75" fill="currentColor" />
+    <circle cx="11" cy="6.5" r=".75" fill="currentColor" />
+  </svg>
+)}
+
+{name === "hammer" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M9.5 3.5l3 3M7 6l3 3M4 12l5-5-2-2-5 5v2h2z" />
+  </svg>
+)}
+
+{name === "paperplane" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M14 2L2 7l5 2 2 5 5-12zM7 9l7-7" />
+  </svg>
+)}
+
+{name === "lock.shield" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8 2l5 2v4c0 3.5-2.5 6-5 7-2.5-1-5-3.5-5-7V4l5-2z" />
+    <rect x="6" y="7" width="4" height="3" rx="0.5" />
+    <path d="M7 7V5.5a1 1 0 0 1 2 0V7" />
+  </svg>
+)}
+
+{name === "checkmark" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M3.5 8.5l3 3 6-7" />
+  </svg>
+)}
+
+{name === "devices" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <rect x="2" y="3" width="9" height="7" rx="1" />
+    <path d="M1 12h11" />
+    <rect x="11" y="6" width="3.5" height="6.5" rx="0.75" />
+  </svg>
+)}
+
+{name === "chart.line" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2 13h12" />
+    <path d="M3 10.5l3.5-3.5 3 3 4.5-5.5" stroke-width="1.75" />
+    <path d="M11 4.5h3v3" stroke-width="1.75" />
+  </svg>
+)}
+
+{name === "slider" && (
+  <svg class={className} width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M2 4h4M8 4h6M2 8h8M12 8h2M2 12h2M6 12h8" />
+    <circle cx="7" cy="4" r="1.5" fill="currentColor" />
+    <circle cx="11" cy="8" r="1.5" fill="currentColor" />
+    <circle cx="5" cy="12" r="1.5" fill="currentColor" />
+  </svg>
+)}

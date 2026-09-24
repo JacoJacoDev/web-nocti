@@ -1,0 +1,97 @@
+---
+import SFSymbol from './SFSymbol.astro';
+
+const steps = [
+  {
+    num: "01",
+    symbol: "magnifyingglass",
+    title: "Discovery",
+    tagline: "Understand the business, audience and objectives.",
+    description: "We clarify the product scope, operational constraints, and target outcomes before committing to code.",
+  },
+  {
+    num: "02",
+    symbol: "compass",
+    title: "Strategy",
+    tagline: "Define structure, positioning and digital direction.",
+    description: "We map information architecture, interaction flows, and technical infrastructure for optimal resilience.",
+  },
+  {
+    num: "03",
+    symbol: "paintpalette",
+    title: "Design",
+    tagline: "Create the visual system and user experience.",
+    description: "Every layout, typographic rule, and state transition is crafted to communicate value without visual noise.",
+  },
+  {
+    num: "04",
+    symbol: "hammer",
+    title: "Development",
+    tagline: "Transform the design into a fast, responsive digital experience.",
+    description: "Engineered using modern web standards, lightweight codebases, and rigorous accessibility practices.",
+  },
+  {
+    num: "05",
+    symbol: "paperplane",
+    title: "Launch",
+    tagline: "Test, optimize and prepare everything for production.",
+    description: "Comprehensive audits across viewports, latency benchmarks, and SEO validation before deployment.",
+  },
+];
+---
+
+<section
+  id="process"
+  class="relative px-4 sm:px-8 py-12 md:py-16 bg-[#f5f5f7] text-[#1d1d1f]"
+>
+  <div class="max-w-[960px] mx-auto">
+    <!-- Apple Eyebrow -->
+    <div class="reveal-item flex items-center gap-2 mb-3">
+      <SFSymbol name="slider" class="w-3.5 h-3.5 text-[#0071e3]" />
+      <span class="apple-eyebrow text-[#0071e3]">04 — Methodology</span>
+    </div>
+
+    <!-- Section Intro Headline -->
+    <div class="reveal-item max-w-3xl mb-6">
+      <h2 class="apple-headline-section text-[#1d1d1f] tracking-tight mb-2">
+        A deliberate path to production.
+      </h2>
+      <p class="apple-body-large text-[#86868b] font-normal">
+        Structured, transparent, and iterative. We eliminate guesswork through disciplined engineering.
+      </p>
+    </div>
+
+    <!-- Apple-style Step Timeline Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
+      {steps.map((step, index) => (
+        <div
+          class="reveal-item bg-[#ffffff] border border-[#d2d2d7] rounded-xl p-3 sm:p-3.5 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition-all duration-200"
+          style={`transition-delay: ${index * 60}ms;`}
+        >
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-[11px] font-mono font-medium text-[#86868b]">
+                {step.num}
+              </span>
+              <div class="w-6 h-6 rounded-md bg-[#f5f5f7] flex items-center justify-center text-[#0071e3]">
+                <SFSymbol name={step.symbol as any} class="w-3 h-3" />
+              </div>
+            </div>
+
+            <h3 class="text-[15px] sm:text-[16px] font-semibold tracking-tight text-[#1d1d1f] mb-1">
+              {step.title}
+            </h3>
+
+            <p class="text-[11.5px] font-medium text-[#1d1d1f] leading-snug mb-1.5">
+              {step.tagline}
+            </p>
+          </div>
+
+          <p class="text-[11px] text-[#86868b] leading-relaxed pt-2 border-t border-[#e8e8ed] mt-2">
+            {step.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+---
+import '../styles/global.css';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "NOCTIVAGOS STUDIOS — Digital Studio & Technology",
+  description = "Noctivagos Studios designs and develops high-performance digital experiences that combine strategy, design, and modern technology.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Noctivagos Studios" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body class="bg-[#0a0a0a] text-white antialiased selection:bg-white selection:text-black">
+    <slot />
+
+    <!-- Global Floating WhatsApp Interaction -->
+    <WhatsAppButton />
+
+    <script>
+      import { initHeader } from '../scripts/header';
+      import { initScrollReveal } from '../scripts/scroll-reveal';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initHeader();
+        initScrollReveal();
+      });
+    </script>
+  </body>
+</html>

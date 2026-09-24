@@ -1,0 +1,93 @@
+---
+import SFSymbol from './SFSymbol.astro';
+
+const differentiators = [
+  {
+    title: "DESIGN",
+    symbol: "paintpalette",
+    summary: "Interfaces built around clarity and intentionality.",
+    detail: "Visual decisions are grounded in cognitive ergonomics, typographic hierarchy, and purposeful restraint.",
+  },
+  {
+    title: "PERFORMANCE",
+    symbol: "gauge",
+    summary: "Fast experiences designed for real-world usage.",
+    detail: "Lightweight architectures engineered for rapid first contentful paint, low latency, and zero layout shift.",
+  },
+  {
+    title: "RESPONSIVE",
+    symbol: "devices",
+    summary: "Layouts that adapt naturally across devices.",
+    detail: "Tailored viewports from compact mobile screens to ultra-wide displays without compromised composition.",
+  },
+  {
+    title: "CONVERSION",
+    symbol: "chart.line",
+    summary: "Digital experiences designed to guide users toward meaningful actions.",
+    detail: "Clear information mapping and intuitive spatial affordances that eliminate user friction.",
+  },
+  {
+    title: "SCALABILITY",
+    symbol: "layers",
+    summary: "Systems structured to evolve with the business.",
+    detail: "Component-driven design architectures and clean codebases built for modular expansion over time.",
+  },
+  {
+    title: "TECHNOLOGY",
+    symbol: "cpu",
+    summary: "Modern technology used when it provides real value.",
+    detail: "Pragmatic stack choices prioritized for maintainability, stability, and speed—not transient hype.",
+  },
+];
+---
+
+<section
+  id="differentiators"
+  class="relative px-4 sm:px-8 py-12 md:py-16 bg-[#ffffff] text-[#1d1d1f]"
+>
+  <div class="max-w-[960px] mx-auto">
+    <!-- Apple Eyebrow -->
+    <div class="reveal-item flex items-center gap-2 mb-3">
+      <SFSymbol name="cpu" class="w-3.5 h-3.5 text-[#0071e3]" />
+      <span class="apple-eyebrow text-[#0071e3]">06 — Engineering Standards</span>
+    </div>
+
+    <!-- Headline -->
+    <div class="reveal-item max-w-3xl mb-6">
+      <h2 class="apple-headline-section text-[#1d1d1f] tracking-tight mb-2">
+        What defines our work.
+      </h2>
+      <p class="apple-body-large text-[#86868b] font-normal">
+        Noctivagos Studios combines design sensibility with engineering discipline to build enduring digital products.
+      </p>
+    </div>
+
+    <!-- Apple-style Bento Feature Grid (Compact) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+      {differentiators.map((item, index) => (
+        <div
+          class="reveal-item apple-card-light p-4 sm:p-4.5 flex flex-col justify-between hover:border-[#0071e3]/40 transition-colors duration-200"
+          style={`transition-delay: ${index * 40}ms;`}
+        >
+          <div>
+            <div class="w-8 h-8 rounded-lg bg-white border border-[#d2d2d7] flex items-center justify-center text-[#0071e3] mb-2.5 shadow-sm">
+              <SFSymbol name={item.symbol as any} class="w-3.5 h-3.5" />
+            </div>
+
+            <h3 class="apple-caption font-semibold tracking-wider text-[#0071e3] uppercase mb-1">
+              {item.title}
+            </h3>
+
+            <p class="text-[15px] sm:text-[16px] font-semibold tracking-tight text-[#1d1d1f] mb-1.5 leading-snug">
+              {item.summary}
+            </p>
+          </div>
+
+          <p class="text-[11.5px] text-[#86868b] pt-2 border-t border-[#d2d2d7]/50 mt-2 leading-relaxed">
+            {item.detail}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

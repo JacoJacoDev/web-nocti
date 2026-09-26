@@ -266,6 +266,48 @@ body {
   transform: translateY(0);
 }
 
+/* Card hover: elevación sutil + brillo de borde (§3)
+   Nota: se usa la propiedad `translate` (no `transform`) porque las tarjetas
+   de contenido también llevan `.reveal-item`, que ya anima `transform`.
+   `translate` es una propiedad independiente y se compone con `transform`,
+   así que el lift del hover no pisa la animación de entrada al scroll.
+
+   El escalonado del reveal se pasa por la variable `--reveal-delay` en lugar de
+   `transition-delay` inline: un estilo inline gana a cualquier regla de autor, así
+   que el delay del reveal retrasaría también el hover (hasta 240ms en las
+   tarjetas últimas). Al ir en una variable, `:hover` lo puede anular a 0. */
+.apple-card-dark,
+.apple-card-light,
+.process-card {
+  /* Conserva los tiempos del reveal (opacity/transform 700ms) y añade tiempos
+     cortos para las propiedades de hover. Antes, `border-color` y `box-shadow`
+     no transitaban en las tarjetas con `.reveal-item` y saltaban de golpe. */
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    translate 240ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms ease,
+    box-shadow 240ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.apple-card-dark:hover,
+.apple-card-light:hover,
+.process-card:hover {
+  translate: 0 -2px;
+  /* El hover arranca de inmediato, sin el delay del reveal. */
+  transition-delay: 0ms;
+}
+
+.apple-card-dark:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.apple-card-light:hover,
+.process-card:hover {
+  border-color: rgba(0, 113, 227, 0.35);
+}
+
 /* Accessibility & Preferences (§14) */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -276,6 +318,13 @@ body {
   .apple-btn-secondary:active,
   .apple-btn-secondary-light:active {
     transform: none;
+  }
+
+  /* El hover se queda en el cambio de color, sin desplazamiento */
+  .apple-card-dark:hover,
+  .apple-card-light:hover,
+  .process-card:hover {
+    translate: none;
   }
 
   .reveal-item {

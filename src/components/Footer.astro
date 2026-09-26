@@ -55,6 +55,25 @@ const columns = [
 
 <footer class="relative px-4 sm:px-8 py-10 md:py-12 bg-[#f5f5f7] text-[#1d1d1f] border-t border-[#d2d2d7] text-[12px]">
   <div class="max-w-[1024px] mx-auto">
+    <!-- Marca: mismo <img> que el header. El asset es blanco (pensado para el
+         header negro) y este footer es claro, así que `invert` lo vuelve negro
+         para mantener el contraste. Pendiente: sustituir por un asset oscuro
+         y quitar `invert` en cuanto exista. -->
+    <div class="pb-5 border-b border-[#d2d2d7]">
+      <a
+        href="#hero"
+        class="inline-flex items-center hover:opacity-80 transition-opacity duration-200"
+        aria-label="Noctivagos Studios"
+      >
+        <img
+          src="/images/brand/logo.png"
+          alt="Noctivagos Studios"
+          class="h-[56px] sm:h-[64px] w-auto object-contain invert"
+          draggable="false"
+        />
+      </a>
+    </div>
+
     <!-- Sección de notas al pie -->
     <div class="pb-5 border-b border-[#d2d2d7] text-[11px] text-[#86868b] leading-normal space-y-1.5">
       <p>

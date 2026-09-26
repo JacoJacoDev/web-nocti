@@ -66,8 +66,8 @@ const steps = [
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
       {steps.map((step, index) => (
         <div
-          class="reveal-item bg-[#ffffff] border border-[#d2d2d7] rounded-xl p-3 sm:p-3.5 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_14px_rgba(0,0,0,0.06)] transition-all duration-200"
-          style={`transition-delay: ${index * 60}ms;`}
+          class="process-card reveal-item bg-[#ffffff] border border-[#d2d2d7] rounded-xl p-3 sm:p-3.5 flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_14px_rgba(0,0,0,0.06)]"
+          style={`--reveal-delay: ${index * 60}ms;`}
         >
           <div>
             <div class="flex items-center justify-between mb-2.5">

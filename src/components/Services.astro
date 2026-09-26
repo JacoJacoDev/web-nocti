@@ -85,8 +85,8 @@ const services = [
       {
         services.map((service, index) => (
           <div
-            class="reveal-item apple-card-dark p-4 sm:p-5 group hover:border-white/[0.2] transition-all duration-300"
-            style={`transition-delay: ${index * 50}ms;`}
+            class="reveal-item apple-card-dark p-4 sm:p-5 group"
+            style={`--reveal-delay: ${index * 50}ms;`}
           >
             <div class="flex items-center justify-between mb-2.5">
               <div class="w-8 h-8 rounded-lg bg-[#1d1d1f] border border-white/[0.08] flex items-center justify-center text-[#2997ff] group-hover:scale-105 transition-transform duration-200">

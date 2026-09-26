@@ -43,7 +43,7 @@ const projects = [
         return (
           <article
             class="reveal-item apple-card-dark p-3.5 sm:p-5 group grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center"
-            style={`transition-delay: ${index * 60}ms;`}
+            style={`--reveal-delay: ${index * 60}ms;`}
           >
             <!-- Marco de imagen del proyecto -->
             <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>

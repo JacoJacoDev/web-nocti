@@ -4,11 +4,11 @@ import SFSymbol from './SFSymbol.astro';
 const projects = [
   {
     name: "PISOALTO REALTY",
-    category: "Real Estate · Digital Experience",
+    category: "Inmobiliario · Experiencia Digital",
     symbol: "building",
-    description: "An archival digital repository exploring raw spatial materiality, brutalist form, and dynamic indexing.",
+    description: "Un repositorio digital de archivo que explora la materialidad espacial bruta, la forma brutalista y la indexación dinámica.",
     image: "/images/projects/kinetic.jpg",
-    alt: "Kinetic Archive minimal architectural web interface",
+    alt: "Interfaz web arquitectónica minimalista de Kinetic Archive",
     href: "#",
   },
 ];
@@ -19,23 +19,24 @@ const projects = [
   class="relative px-4 sm:px-8 py-12 md:py-16 bg-[#000000] text-[#f5f5f7] overflow-hidden"
 >
   <div class="relative z-10 max-w-[960px] mx-auto">
-    <!-- Apple Eyebrow -->
+    <!-- Eyebrow -->
     <div class="reveal-item flex items-center gap-2 mb-3">
       <SFSymbol name="sparkles" class="w-3.5 h-3.5 text-[#2997ff]" />
-      <span class="apple-eyebrow text-[#2997ff]">05 — Selected Work</span>
+      <span class="apple-eyebrow text-[#2997ff]">05 — Trabajos Destacados</span>
     </div>
 
-    <!-- Section Intro Headline -->
+    <!-- Titular de introducción -->
     <div class="reveal-item max-w-3xl mb-6">
       <h2 class="apple-headline-section text-[#f5f5f7] tracking-tight mb-2">
-        Form informed by function.
+        La forma guiada por la función.
       </h2>
       <p class="apple-body-large text-[#86868b] font-normal">
-        A curated selection of digital platforms engineered with uncompromising standards of craft and performance.
+        Una selección curada de plataformas digitales construidas con estándares
+        intransables de oficio y rendimiento.
       </p>
     </div>
 
-    <!-- Apple-style Showcase Articles (Compact Spacing) -->
+    <!-- Artículos de showcase (espaciado compacto) -->
     <div class="space-y-6 md:space-y-8">
       {projects.map((project, index) => {
         const isReversed = index % 2 !== 0;
@@ -44,12 +45,12 @@ const projects = [
             class="reveal-item apple-card-dark p-3.5 sm:p-5 group grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center"
             style={`transition-delay: ${index * 60}ms;`}
           >
-            <!-- Project Image Frame -->
+            <!-- Marco de imagen del proyecto -->
             <div class={`lg:col-span-7 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
               <a
                 href={project.href}
                 class="block relative overflow-hidden rounded-xl bg-[#000000] border border-white/[0.08]"
-                aria-label={`View project ${project.name}`}
+                aria-label={`Ver proyecto ${project.name}`}
               >
                 <div class="aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden">
                   <img
@@ -63,13 +64,13 @@ const projects = [
               </a>
             </div>
 
-            <!-- Project Details & Typography -->
+            <!-- Detalles y tipografía del proyecto -->
             <div class={`lg:col-span-5 flex flex-col justify-center space-y-2.5 ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
               <div class="inline-flex items-center gap-2 text-[#86868b] text-[11px] font-medium tracking-tight">
                 <SFSymbol name={project.symbol as any} class="w-3.5 h-3.5 text-[#2997ff]" />
                 <span>{project.category}</span>
               </div>
-              
+
               <h3 class="text-[20px] sm:text-[23px] font-semibold tracking-tight text-[#f5f5f7] group-hover:text-white transition-colors">
                 {project.name}
               </h3>
@@ -83,7 +84,7 @@ const projects = [
                   href={project.href}
                   class="apple-link text-[13.5px]"
                 >
-                  <span>Explore case study</span>
+                  <span>Ver caso de éxito</span>
                   <SFSymbol name="arrow.up.right" class="w-3 h-3 text-[#2997ff]" />
                 </a>
               </div>

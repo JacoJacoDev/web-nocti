@@ -15,7 +15,7 @@ const whatsappUrl = phoneNumber
   : `https://api.whatsapp.com/send?text=${encodedMessage}`;
 ---
 
-<!-- Floating WhatsApp Button (Apple-inspired Glass & Brand Glow) -->
+<!-- Botón flotante de WhatsApp (glass + resplandor de marca) -->
 <aside class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50">
   <a
     href={whatsappUrl}
@@ -24,11 +24,11 @@ const whatsappUrl = phoneNumber
     aria-label="Contactar por WhatsApp"
     class="group relative flex items-center gap-2.5 px-3.5 py-3 sm:px-4 sm:py-3 rounded-full bg-[#121214]/90 backdrop-blur-xl border border-white/[0.14] text-[#f5f5f7] shadow-[0_8px_32px_rgba(0,0,0,0.6),0_0_24px_rgba(37,211,102,0.25)] hover:shadow-[0_8px_36px_rgba(37,211,102,0.45)] hover:border-[#25D366]/60 hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 ease-out"
   >
-    <!-- Glowing pulse aura around icon -->
+    <!-- Aura pulsante alrededor del ícono -->
     <span class="relative flex h-7 w-7 items-center justify-center">
       <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30"></span>
       <span class="relative inline-flex items-center justify-center rounded-full h-7 w-7 bg-[#25D366] text-black shadow-sm">
-        <!-- SVG WhatsApp Official Path -->
+        <!-- Trazo SVG oficial de WhatsApp -->
         <svg
           class="w-4 h-4 text-white fill-current"
           viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ const whatsappUrl = phoneNumber
       </span>
     </span>
 
-    <!-- Label with status pill -->
+    <!-- Etiqueta con indicador de estado -->
     <div class="flex flex-col text-left pr-1">
       <div class="flex items-center gap-1.5">
         <span class="text-[12.5px] font-medium tracking-tight text-[#f5f5f7] group-hover:text-white transition-colors">

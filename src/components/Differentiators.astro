@@ -3,40 +3,40 @@ import SFSymbol from './SFSymbol.astro';
 
 const differentiators = [
   {
-    title: "DESIGN",
+    title: "DISEÑO",
     symbol: "paintpalette",
-    summary: "Interfaces built around clarity and intentionality.",
-    detail: "Visual decisions are grounded in cognitive ergonomics, typographic hierarchy, and purposeful restraint.",
+    summary: "Interfaces construidas en torno a la claridad y la intencionalidad.",
+    detail: "Las decisiones visuales se apoyan en la ergonomía cognitiva, la jerarquía tipográfica y una contención deliberada.",
   },
   {
-    title: "PERFORMANCE",
+    title: "RENDIMIENTO",
     symbol: "gauge",
-    summary: "Fast experiences designed for real-world usage.",
-    detail: "Lightweight architectures engineered for rapid first contentful paint, low latency, and zero layout shift.",
+    summary: "Experiencias rápidas pensadas para el uso real.",
+    detail: "Arquitecturas livianas diseñadas para una primera pintura de contenido inmediata, baja latencia y cero desplazamiento de diseño.",
   },
   {
-    title: "RESPONSIVE",
+    title: "ADAPTATIVO",
     symbol: "devices",
-    summary: "Layouts that adapt naturally across devices.",
-    detail: "Tailored viewports from compact mobile screens to ultra-wide displays without compromised composition.",
+    summary: "Layouts que se adaptan de forma natural a cada dispositivo.",
+    detail: "Viewports a medida, desde pantallas móviles compactas hasta monitores ultrawide, sin comprometer la composición.",
   },
   {
-    title: "CONVERSION",
+    title: "CONVERSIÓN",
     symbol: "chart.line",
-    summary: "Digital experiences designed to guide users toward meaningful actions.",
-    detail: "Clear information mapping and intuitive spatial affordances that eliminate user friction.",
+    summary: "Experiencias digitales diseñadas para llevar al usuario a acciones significativas.",
+    detail: "Mapeo claro de la información yJerarquías espaciales intuitivas que eliminan la fricción del usuario.",
   },
   {
-    title: "SCALABILITY",
+    title: "ESCALABILIDAD",
     symbol: "layers",
-    summary: "Systems structured to evolve with the business.",
-    detail: "Component-driven design architectures and clean codebases built for modular expansion over time.",
+    summary: "Sistemas estructurados para evolucionar junto al negocio.",
+    detail: "Arquitecturas basadas en componentes y bases de código limpias, preparadas para crecer de forma modular con el tiempo.",
   },
   {
-    title: "TECHNOLOGY",
+    title: "TECNOLOGÍA",
     symbol: "cpu",
-    summary: "Modern technology used when it provides real value.",
-    detail: "Pragmatic stack choices prioritized for maintainability, stability, and speed—not transient hype.",
+    summary: "Tecnología moderna usada solo cuando aporta valor real.",
+    detail: "Elecciones de stack pragmáticas, priorizando mantenibilidad, estabilidad y velocidad en lugar de modas pasajeras.",
   },
 ];
 ---
@@ -46,23 +46,24 @@ const differentiators = [
   class="relative px-4 sm:px-8 py-12 md:py-16 bg-[#ffffff] text-[#1d1d1f]"
 >
   <div class="max-w-[960px] mx-auto">
-    <!-- Apple Eyebrow -->
+    <!-- Eyebrow -->
     <div class="reveal-item flex items-center gap-2 mb-3">
       <SFSymbol name="cpu" class="w-3.5 h-3.5 text-[#0071e3]" />
-      <span class="apple-eyebrow text-[#0071e3]">06 — Engineering Standards</span>
+      <span class="apple-eyebrow text-[#0071e3]">06 — Estándares de Ingeniería</span>
     </div>
 
-    <!-- Headline -->
+    <!-- Titular -->
     <div class="reveal-item max-w-3xl mb-6">
       <h2 class="apple-headline-section text-[#1d1d1f] tracking-tight mb-2">
-        What defines our work.
+        Lo que define nuestro trabajo.
       </h2>
       <p class="apple-body-large text-[#86868b] font-normal">
-        Noctivagos Studios combines design sensibility with engineering discipline to build enduring digital products.
+        Noctivagos Studios combina la sensibilidad del diseño con la disciplina
+        de la ingeniería para crear productos digitales duraderos.
       </p>
     </div>
 
-    <!-- Apple-style Bento Feature Grid (Compact) -->
+    <!-- Grid de features bento (compacto) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
       {differentiators.map((item, index) => (
         <div

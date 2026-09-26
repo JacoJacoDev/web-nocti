@@ -1,6 +1,7 @@
 /**
- * Header & Mobile Navigation Controller
- * Implements fluid, interruptible transitions, keyboard accessibility and backdrop blur state.
+ * Controlador del header y la navegación móvil.
+ * Implementa transiciones fluidas e interrumpibles, accesibilidad por teclado
+ * y estado de desenfoque de fondo.
  */
 export function initHeader() {
   const header = document.getElementById('site-header');
@@ -10,7 +11,7 @@ export function initHeader() {
 
   if (!header) return;
 
-  // 1. Scroll listener for sticky header styling
+  // 1. Listener de scroll para el estilo del header fijo
   let lastScrollY = window.scrollY;
   const updateHeaderState = () => {
     const currentScrollY = window.scrollY;
@@ -25,7 +26,7 @@ export function initHeader() {
   window.addEventListener('scroll', updateHeaderState, { passive: true });
   updateHeaderState();
 
-  // 2. Mobile Menu Handling
+  // 2. Manejo del menú móvil
   if (menuBtn && mobileMenu) {
     let isOpen = false;
 
@@ -38,9 +39,9 @@ export function initHeader() {
         mobileMenu.classList.remove('pointer-events-none', 'opacity-0');
         mobileMenu.classList.add('pointer-events-auto', 'opacity-100');
         document.body.style.overflow = 'hidden';
-        menuBtn.setAttribute('aria-label', 'Close menu');
-        
-        // Transform hamburger to close icon
+        menuBtn.setAttribute('aria-label', 'Cerrar menú');
+
+        // Transformar el hamburguesa en icono de cerrar
         const lines = menuBtn.querySelectorAll('.menu-line');
         if (lines.length >= 2) {
           (lines[0] as HTMLElement).style.transform = 'translateY(4px) rotate(45deg)';
@@ -50,7 +51,7 @@ export function initHeader() {
         mobileMenu.classList.remove('pointer-events-auto', 'opacity-100');
         mobileMenu.classList.add('pointer-events-none', 'opacity-0');
         document.body.style.overflow = '';
-        menuBtn.setAttribute('aria-label', 'Open menu');
+        menuBtn.setAttribute('aria-label', 'Abrir menú');
 
         const lines = menuBtn.querySelectorAll('.menu-line');
         if (lines.length >= 2) {
@@ -64,14 +65,14 @@ export function initHeader() {
       setMenuOpen(!isOpen);
     });
 
-    // Close when clicking any nav link
+    // Cerrar al hacer clic en cualquier enlace de navegación
     mobileLinks.forEach((link) => {
       link.addEventListener('click', () => {
         setMenuOpen(false);
       });
     });
 
-    // Close on Escape key press
+    // Cerrar al presionar la tecla Escape
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && isOpen) {
         setMenuOpen(false);

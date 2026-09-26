@@ -5,37 +5,37 @@ const steps = [
   {
     num: "01",
     symbol: "magnifyingglass",
-    title: "Discovery",
-    tagline: "Understand the business, audience and objectives.",
-    description: "We clarify the product scope, operational constraints, and target outcomes before committing to code.",
+    title: "Descubrimiento",
+    tagline: "Entender el negocio, la audiencia y los objetivos.",
+    description: "Aclaramos el alcance del producto, las restricciones operativas y los resultados esperados antes de escribir una línea de código.",
   },
   {
     num: "02",
     symbol: "compass",
-    title: "Strategy",
-    tagline: "Define structure, positioning and digital direction.",
-    description: "We map information architecture, interaction flows, and technical infrastructure for optimal resilience.",
+    title: "Estrategia",
+    tagline: "Definir la estructura, el posicionamiento y la dirección digital.",
+    description: "Mapeamos la arquitectura de información, los flujos de interacción y la infraestructura técnica para máximo rendimiento.",
   },
   {
     num: "03",
     symbol: "paintpalette",
-    title: "Design",
-    tagline: "Create the visual system and user experience.",
-    description: "Every layout, typographic rule, and state transition is crafted to communicate value without visual noise.",
+    title: "Diseño",
+    tagline: "Crear el sistema visual y la experiencia de usuario.",
+    description: "Cada layout, regla tipográfica y transición de estado está pensada para comunicar valor sin ruido visual.",
   },
   {
     num: "04",
     symbol: "hammer",
-    title: "Development",
-    tagline: "Transform the design into a fast, responsive digital experience.",
-    description: "Engineered using modern web standards, lightweight codebases, and rigorous accessibility practices.",
+    title: "Desarrollo",
+    tagline: "Convertir el diseño en una experiencia digital rápida y adaptable.",
+    description: "Ingeniería con estándares web modernos, código liviano y prácticas rigurosas de accesibilidad.",
   },
   {
     num: "05",
     symbol: "paperplane",
-    title: "Launch",
-    tagline: "Test, optimize and prepare everything for production.",
-    description: "Comprehensive audits across viewports, latency benchmarks, and SEO validation before deployment.",
+    title: "Lanzamiento",
+    tagline: "Probar, optimizar y preparar todo para producción.",
+    description: "Auditorías exhaustivas en todos los dispositivos, pruebas de latencia y validación SEO antes del despliegue.",
   },
 ];
 ---
@@ -45,23 +45,24 @@ const steps = [
   class="relative px-4 sm:px-8 py-12 md:py-16 bg-[#f5f5f7] text-[#1d1d1f]"
 >
   <div class="max-w-[960px] mx-auto">
-    <!-- Apple Eyebrow -->
+    <!-- Eyebrow -->
     <div class="reveal-item flex items-center gap-2 mb-3">
       <SFSymbol name="slider" class="w-3.5 h-3.5 text-[#0071e3]" />
-      <span class="apple-eyebrow text-[#0071e3]">04 — Methodology</span>
+      <span class="apple-eyebrow text-[#0071e3]">04 — Metodología</span>
     </div>
 
-    <!-- Section Intro Headline -->
+    <!-- Titular de introducción -->
     <div class="reveal-item max-w-3xl mb-6">
       <h2 class="apple-headline-section text-[#1d1d1f] tracking-tight mb-2">
-        A deliberate path to production.
+        Un camino deliberado hacia producción.
       </h2>
       <p class="apple-body-large text-[#86868b] font-normal">
-        Structured, transparent, and iterative. We eliminate guesswork through disciplined engineering.
+        Estructurado, transparente e iterativo. Eliminamos la improvisación con
+        ingeniería disciplinada.
       </p>
     </div>
 
-    <!-- Apple-style Step Timeline Grid -->
+    <!-- Grid de línea de tiempo por pasos -->
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-3">
       {steps.map((step, index) => (
         <div

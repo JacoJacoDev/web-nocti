@@ -5,46 +5,44 @@ const currentYear = new Date().getFullYear();
 
 const columns = [
   {
-    title: "Capabilities",
+    title: "Capacidades",
     links: [
-      { href: "#services", label: "Web Development" },
-      { href: "#services", label: "UX/UI Design" },
+      { href: "#services", label: "Desarrollo Web" },
+      { href: "#services", label: "Diseño UX/UI" },
       { href: "#services", label: "Landing Pages" },
-      { href: "#services", label: "Corporate Platforms" },
+      { href: "#services", label: "Plataformas Corporativas" },
       { href: "#services", label: "E-commerce" },
-      { href: "#services", label: "Automations & APIs" },
+      { href: "#services", label: "Automatización & APIs" },
     ],
   },
   {
-    title: "Methodology",
+    title: "Metodología",
     links: [
-      { href: "#process", label: "01 Discovery" },
-      { href: "#process", label: "02 Strategy" },
-      { href: "#process", label: "03 Design" },
-      { href: "#process", label: "04 Development" },
-      { href: "#process", label: "05 Launch" },
+      { href: "#process", label: "01 Descubrimiento" },
+      { href: "#process", label: "02 Estrategia" },
+      { href: "#process", label: "03 Diseño" },
+      { href: "#process", label: "04 Desarrollo" },
+      { href: "#process", label: "05 Lanzamiento" },
     ],
   },
   {
-    title: "Selected Work",
+    title: "Trabajos",
     links: [
-      { href: "#work", label: "Kinetic Archive" },
-      { href: "#work", label: "Aura Acoustics" },
-      { href: "#work", label: "Strata System" },
-      { href: "#work", label: "All Case Studies" },
+      { href: "#work", label: "PISOALTO REALTY" },
+      { href: "#work", label: "Todos los casos" },
     ],
   },
   {
-    title: "Studio Values",
+    title: "Valores del Estudio",
     links: [
-      { href: "#about", label: "Intentionality" },
-      { href: "#differentiators", label: "Performance Standards" },
-      { href: "#differentiators", label: "Fluid Accessibility" },
-      { href: "#differentiators", label: "System Scalability" },
+      { href: "#about", label: "Intencionalidad" },
+      { href: "#differentiators", label: "Estándares de Rendimiento" },
+      { href: "#differentiators", label: "Accesibilidad Fluida" },
+      { href: "#differentiators", label: "Escalabilidad del Sistema" },
     ],
   },
   {
-    title: "Inquiries & Connect",
+    title: "Consultas & Contacto",
     links: [
       { href: "mailto:contact@noctivagos.studio", label: "contact@noctivagos.studio" },
       { href: "https://x.com", label: "X (Twitter)" },
@@ -57,17 +55,17 @@ const columns = [
 
 <footer class="relative px-4 sm:px-8 py-10 md:py-12 bg-[#f5f5f7] text-[#1d1d1f] border-t border-[#d2d2d7] text-[12px]">
   <div class="max-w-[1024px] mx-auto">
-    <!-- Apple-style Footnotes / Notes Section -->
+    <!-- Sección de notas al pie -->
     <div class="pb-5 border-b border-[#d2d2d7] text-[11px] text-[#86868b] leading-normal space-y-1.5">
       <p>
-        1. Noctivagos Studios is an independent technology and design studio. All projects shown are engineered adhering to modern W3C standards, sub-second latency budgets, and rigorous accessibility compliance.
+        1. Noctivagos Studios es un estudio independiente de tecnología y diseño. Todos los proyectos mostrados están construidos siguiendo estándares modernos del W3C, presupuestos de latencia sub-segundo y un cumplimiento riguroso de accesibilidad.
       </p>
       <p>
-        2. Performance benchmarks represent production build metrics measured with standard headless Lighthouse and Core Web Vitals tooling under real-world throttled network simulations.
+        2. Las métricas de rendimiento corresponden a compilaciones de producción medidas con Lighthouse headless y herramientas de Core Web Vitals, bajo simulaciones de red limitadas en condiciones reales.
       </p>
     </div>
 
-    <!-- Apple-style Multi-column Directory Grid -->
+    <!-- Directorio de múltiples columnas -->
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-5 sm:gap-6 py-6 sm:py-8">
       {columns.map((col) => (
         <div>
@@ -90,20 +88,20 @@ const columns = [
       ))}
     </div>
 
-    <!-- Apple-style Bottom Legal & Copyright Bar -->
+    <!-- Barra legal y de copyright -->
     <div class="pt-5 border-t border-[#d2d2d7] flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-[11px] text-[#6e6e73]">
       <div class="flex flex-wrap items-center gap-x-3.5 gap-y-1.5">
-        <p>Copyright &copy; {currentYear} Noctivagos Studios. All rights reserved.</p>
+        <p>Copyright &copy; {currentYear} Noctivagos Studios. Todos los derechos reservados.</p>
         <span class="hidden sm:inline text-[#d2d2d7]">|</span>
-        <a href="#" class="hover:text-[#1d1d1f] transition-colors">Privacy Policy</a>
-        <a href="#" class="hover:text-[#1d1d1f] transition-colors">Terms of Use</a>
-        <a href="#" class="hover:text-[#1d1d1f] transition-colors">Engineering Standards</a>
+        <a href="#" class="hover:text-[#1d1d1f] transition-colors">Política de Privacidad</a>
+        <a href="#" class="hover:text-[#1d1d1f] transition-colors">Términos de Uso</a>
+        <a href="#" class="hover:text-[#1d1d1f] transition-colors">Estándares de Ingeniería</a>
         <a href="#" class="hover:text-[#1d1d1f] transition-colors">Legal</a>
       </div>
 
       <div class="flex items-center gap-2 text-[#1d1d1f] font-medium">
         <SFSymbol name="globe" class="w-3.5 h-3.5 text-[#86868b]" />
-        <span>Global Studio (Remote)</span>
+        <span>Estudio Global (Remoto)</span>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 /**
- * Scroll Reveal System
- * Implements smooth intersection observing with threshold and stagger.
- * Conforms to Apple Design Guidelines §14 (Reduced Motion).
+ * Sistema de revelado al hacer scroll.
+ * Implementa un IntersectionObserver suave con umbral y escalonado.
+ * Cumple con las Pautas de Diseño de Apple §14 (movimiento reducido).
  */
 export function initScrollReveal() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

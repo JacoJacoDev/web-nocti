@@ -8,13 +8,13 @@ interface Props {
 }
 
 const {
-  title = "NOCTIVAGOS STUDIOS — Digital Studio & Technology",
-  description = "Noctivagos Studios designs and develops high-performance digital experiences that combine strategy, design, and modern technology.",
+  title = "NOCTIVAGOS STUDIOS — Estudio Digital & Tecnología",
+  description = "Noctivagos Studios diseña y desarrolla experiencias digitales de alto rendimiento que combinan estrategia, diseño y tecnología moderna.",
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,17 +22,18 @@ const {
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO Meta Tags -->
+    <!-- Metaetiquetas SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0a0a0a" />
 
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Noctivagos Studios" />
+    <meta property="og:locale" content="es_ES" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -42,7 +43,7 @@ const {
   <body class="bg-[#0a0a0a] text-white antialiased selection:bg-white selection:text-black">
     <slot />
 
-    <!-- Global Floating WhatsApp Interaction -->
+    <!-- Interacción global flotante de WhatsApp -->
     <WhatsAppButton />
 
     <script>

@@ -11,10 +11,13 @@ const globalNav = [
 ];
 ---
 
-<!-- Barra de navegación global fija (estándar de 44px) -->
+<!-- Barra de navegación global fija (estándar de 44px)
+     `z-[60]`: queda POR ENCIMA del overlay móvil (`z-[55]`). Antes ambos eran
+     `z-50` y el overlay, al venir después en el DOM, se pintaba encima y se
+     comía el puntero del botón de cierre (WCAG 2.5.8 / 2.1.1 en táctil). -->
 <header
   id="site-header"
-  class="fixed top-0 left-0 right-0 z-50 apple-nav-blur border-b border-white/[0.08] transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-[60] apple-nav-blur border-b border-white/[0.08] transition-all duration-300"
 >
   <div
     class="max-w-[1024px] mx-auto px-4 sm:px-8 h-[44px] flex items-center justify-between"
@@ -60,10 +63,14 @@ const globalNav = [
         <SFSymbol name="chevron.right" class="w-2.5 h-2.5" />
       </a>
 
-      <!-- Botón de menú hamburguesa (móvil) -->
+      <!-- Botón de menú hamburguesa (móvil)
+           Sin `focus:outline-none`: el indicador de foco global de
+           `global.css` necesita quedarse. Además el botón queda por encima del
+           overlay (`z-[60]` > `z-[55]`), así que sigue siendo pulsable con el
+           menú abierto. -->
       <button
         id="menu-toggle-btn"
-        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 focus:outline-none"
+        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
         aria-label="Abrir menú de navegación"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -114,11 +121,20 @@ const globalNav = [
   </div>
 </div>
 
-<!-- Menú móvil superpuesto -->
+<!-- Menú móvil superpuesto
+     Modelado como diálogo modal (`role="dialog" aria-modal="true"`).
+     `inert` en estado cerrado: saca los 7 enlaces del orden de tabulación y de
+     el árbol de accesibilidad sin depender de `aria-hidden` (WCAG 4.1.2).
+     `z-[55]`: por debajo del header (`z-[60]`) para que el botón de cierre
+     siga siendo alcanzable con el dedo.
+     El <nav> interno queda envuelto en el diálogo. -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-50 bg-[#000000]/98 backdrop-blur-2xl flex flex-col justify-between px-6 pt-24 pb-12 pointer-events-none opacity-0 transition-all duration-300 md:hidden"
-  aria-hidden="true"
+  class="fixed inset-0 z-[55] bg-[#000000]/98 backdrop-blur-2xl flex flex-col justify-between px-6 pt-24 pb-12 pointer-events-none opacity-0 transition-all duration-300 md:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Menú de navegación móvil"
+  inert
 >
   <nav class="flex flex-col space-y-4" aria-label="Navegación móvil">
     <div
